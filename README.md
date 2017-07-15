@@ -51,7 +51,7 @@ This code isn't very interesting, but...
 
 # improvements
 If I were to do this again, I would make some major changes:
-- Abandon ZFS and use a file system image and overlays - this would allow the underling OS to be kept upto date, without having to keep all the ZFS forks up to date too.  ZFS would sometimes freeze (once a week) and need a reboot to start working again.
+- Abandon ZFS and use a file system image and overlays - this would allow the underling OS to be kept up-to-date, without having to keep all the ZFS forks up-to-date too.  ZFS would sometimes freeze (once a week) and need a reboot to start working again.  The server currently reboots every morning to work around this issue.
 - Use a database for storing statistics.
 - A container using all cores can start in ten seconds.  Restricting containers to 2 cores makes then take nearly a minute, which is why I hacked-in pre-generation of containers.  I would get rid of pre-generation and allow containers to use all cores for twenty seconds of user-time.
 
