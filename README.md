@@ -57,4 +57,4 @@ If I were to do this again, I would make some major changes:
 # things done right
 While this project is a mess, there are a couple of good areas:
 - app.js uses a multi-step approach to starting the VMs, by looking at the output of lxc commands.  This is much better than acting on the expected state of containers.
-- The use of maxmind for load balanceing worked well with three servers.
+- The use of maxmind for load balancing worked well with three servers.
