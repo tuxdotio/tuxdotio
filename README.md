@@ -20,12 +20,34 @@ This code isn't very interesting, but...
           });
         });
 </pre>
-
 This code fixes all the attacks I saw when running it live, i.e. fork bombs, bitcoin mining, etc.
+
+<pre>
+    obj.cpuset = function(name, cb){
+        var output = '';
+                var available_cpus = ['2','3','4','5','6','7'];
+                var cmb = Combinatorics.combination(available_cpus, 2); // give each container two different cpus out of six
+                var cpus = cmb.next();
+                for (var i = 0; i < 15; i++, cpus = cmb.next()) { // there are 15
+                    if (djb2(name) % 15 === i) break;
+                }
+                var cmd = 'lxc-cgroup -n ' + name + ' cpuset.cpus "' + cpus.join(',') + '"';
+                console.log('cmd: ' + cmd);
+        sysExec(cmd,
+            function(data) {
+                output += data;
+            }, function(error) {
+              cb(error, output);
+            }
+        );
+    };
+</pre>
+
+The use of Combinetrics to give each container 2 out of 6 shared CPUs, while reserving cores 0 and 1 for the system.
 
 # improvements
 If I were to do this again, I would make some major changes:
-- Abandon ZFS and use a file system image and overlays - this would allow the underling OS to be kept upto date, without having to keep all the ZFS forks up to date too.  ZFS would sometimes freeze (oncee a week) and need a reboot to start working again.
+- Abandon ZFS and use a file system image and overlays - this would allow the underling OS to be kept upto date, without having to keep all the ZFS forks up to date too.  ZFS would sometimes freeze (once a week) and need a reboot to start working again.
 - Use a database for storing statistics.
 
 # things done right
