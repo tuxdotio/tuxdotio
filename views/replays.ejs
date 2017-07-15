@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Replays <%= date %></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <ul>
+        <% files.forEach(function(file){ %>
+        <li><a href="<%= file.filename %>"><%= file.filename %></a> <%= file.stats.size %></li>
+        <%});%>
+    </ul>
+</body>
+</html>

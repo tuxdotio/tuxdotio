@@ -1,0 +1,3 @@
+tuxdotio is licensed under the MPL 2.0 (Mozilla Public License 2.0).
+
+You will find further licenses within the code, particularly in the noVNC and node_module sections.

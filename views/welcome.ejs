@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<h2>
+    This website (tux.io) has been sold.
+</h2>
+<p>
+    I have not been able to find the time or motivation needed to improve tux.io over the last couple of months.  I put the domain name and site up for sale and I am now awaiting payment from the highest bidder.
+</p>
+<h2>
+    Welcome to tux.io beta.
+</h2>
+<p>
+    You are viewing this web page in a browser that is running on a remote virtual machine.
+    This desktop is displayed in your local browser via a websocket connection.
+</p>
+<p>
+    Multiple people can use this virtual desktop simultaneously.
+</p>
+<p>
+    Just send the https://&lt;server&gt;.tux.io/vm/&lt;vm_name&gt;/desktop URL to your friends or students and you will all see the same desktop.  (The virtual desktop will change size to match the window of the latest browser to connect or resize.)
+</p>
+<p>
+    This is beta, bug-ridden code.  Please help by reporting the bugs which you encounter to bugs@tux.io with as much specific detail as possible.
+</p>
+<p>
+    Likewise, if you would like new features to be added, email features@tux.io with your ideas.
+</p>
+<h3>
+    Frequently Asked Questions
+</h3>
+<h4>
+    Why did you make this site?
+</h4>
+<p>
+    My day-job involves a some web-design, some API work and some networking tasks.  Websites/APIs need to be tested from outside the LAN.  Firewalls need to be tested from outside of the LAN.
+</p>
+<p>
+    I got bored of spending a few minutes spinning-up Digital Ocean instances, and so in true geek fashion I spent many evenings and weekends building tux.io so that no-one needs to anymore.
+</p>
+<h4>
+	What does the server restart once per day, and shut me out for five minutes?
+</h4>
+<p>
+	Each of the tux.io servers restarts at 8am (local time), during the beta test.  This causes five minutes of down time.  Once this beta period has finished, there will be a monthly restart (to allow software changes to take effect). 
+</p>
+<h4>
+    How do I manage this virtual machine?
+</h4>
+<p>
+    Click the "tux.io admin" tab at the top right of the desktop.
+</p>
+<h4>
+    Can I install software on this machine?
+</h4>
+<p>
+    No, you do not have root access to this virtual machine.  If there are particular packages you need, please email me at packages@tux.io and I will install them.
+</p>
+<p>
+    Root access will be implemented in a few weeks, if this side-project succeeds in getting some users.
+</p>
+<h4>
+    How long do VMs run?
+</h4>
+<p>
+    The VMs only run while one or more browsers are connected to their desktop.  This lets each (of the two) servers host hundreds of VMs.
+</p>
+<h4>
+    How long do files exist?
+</h4>
+<p>
+    During this beta phase, a VMs files exist for only as long as it is running.  We intend to makes files persistent for a month or more, once we have tackled other technical challenges.
+</p>
+<h4>
+    What protection does this site have against abuse?
+</h4>
+<p>
+    There is a limit of 10 packets per seconds for all non-web outgoing traffic.  This limits attacking or spamming traffic to ~15KB/s.
+</p>
+<p>
+    If you are suffering any form of abuse from users of tux.io, please email abuse@tux.io with details.
+</p>
+<h4>
+    What software is used to make this site work?
+</h4>
+<p>
+    This site was made possible by the following projects, and many more.
+</p>
+<ul>
+    <li><a href="https://kanaka.github.io/noVNC/" target="_blank">noVNC</a></li>
+    <li><a href="http://tigervnc.org/" target="_blank">TigerVNC</a></li>
+    <li><a href="https://www.xfce.org/" target="_blank">XFCE</a></li>
+</ul>
+</body>
+</html>
