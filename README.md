@@ -29,14 +29,14 @@ This code fixes all the attacks I saw when running it live, i.e. fork bombs, bit
 <pre>
     obj.cpuset = function(name, cb){
         var output = '';
-                var available_cpus = ['2','3','4','5','6','7'];
-                var cmb = Combinatorics.combination(available_cpus, 2); // give each container two different cpus out of six
-                var cpus = cmb.next();
-                for (var i = 0; i < 15; i++, cpus = cmb.next()) { // there are 15
-                    if (djb2(name) % 15 === i) break;
-                }
-                var cmd = 'lxc-cgroup -n ' + name + ' cpuset.cpus "' + cpus.join(',') + '"';
-                console.log('cmd: ' + cmd);
+        var available_cpus = ['2','3','4','5','6','7'];
+        var cmb = Combinatorics.combination(available_cpus, 2); // give each container two different cpus out of six
+        var cpus = cmb.next();
+        for (var i = 0; i < 15; i++, cpus = cmb.next()) { // there are 15
+            if (djb2(name) % 15 === i) break;
+        }
+        var cmd = 'lxc-cgroup -n ' + name + ' cpuset.cpus "' + cpus.join(',') + '"';
+        console.log('cmd: ' + cmd);
         sysExec(cmd,
             function(data) {
                 output += data;
