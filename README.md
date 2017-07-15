@@ -11,7 +11,9 @@ This had declined to about 40 unique users per day.  If 10% of users would pay f
 
 # interesting bits
 This code isn't very interesting, but...
-<pre>
+
+- The code below fixes all the attacks I saw when running it live, i.e. fork bombs, bitcoin mining, etc.
+  <pre>
         lxc.cpuset(sid, function() {
           lxc.mem(sid, function() {
             lxc.memswap(sid, function() {
@@ -23,10 +25,10 @@ This code isn't very interesting, but...
             });
           });
         });
-</pre>
-This code fixes all the attacks I saw when running it live, i.e. fork bombs, bitcoin mining, etc.
+  </pre>
 
-<pre>
+- The use of Combinetrics to give each container 2 out of 6 shared CPUs, while reserving cores 0 and 1 for the system.
+  <pre>
     obj.cpuset = function(name, cb){
         var output = '';
         var available_cpus = ['2','3','4','5','6','7'];
@@ -45,9 +47,7 @@ This code fixes all the attacks I saw when running it live, i.e. fork bombs, bit
             }
         );
     };
-</pre>
-
-The use of Combinetrics to give each container 2 out of 6 shared CPUs, while reserving cores 0 and 1 for the system.
+  </pre>
 
 # improvements
 If I were to do this again, I would make some major changes:
