@@ -1,9 +1,13 @@
 # tuxdotio
 The code from the defunct tux.io site.
 
-Sorry for the mess, this code was hacked together while being hits hundreds of times a minute by Reddit and Hacker News traffic.
+Sorry for the mess, this code was hacked together while being hit hundreds of times a minute by Reddit and Hacker News traffic.
 
-The project was abandoned due to cost.  It orignally had three 32GB dedicated servers.  That was reduced to one, but even one server costs $500 a year.  Peak traffic was about 2,000 unique users per day.  This had declined to about 40 unique users per day.  If 10% of users would pay for the service, it would have cost them $125 a year, due to under utlisation of the server.  (It can cope with 30 simulateous users, enough for many 100's of unique users per day.)
+The project was abandoned due to cost.  
+
+It orignally had three 32GB dedicated servers.  That was reduced to one, but even one server costs $500 a year.  Peak traffic was about 2,000 unique users per day.  
+
+This had declined to about 40 unique users per day.  If 10% of users would pay for the service, it would have cost them $125 a year, due to under utlisation of the server.  (It can cope with 30 simulateous users, enough for many 100's of unique users per day.)  If it had settled at 400 unique users per day, if would have been worth writing payment code and trying to make it self-funding.
 
 # interesting bits
 This code isn't very interesting, but...
