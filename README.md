@@ -53,6 +53,7 @@ The use of Combinetrics to give each container 2 out of 6 shared CPUs, while res
 If I were to do this again, I would make some major changes:
 - Abandon ZFS and use a file system image and overlays - this would allow the underling OS to be kept upto date, without having to keep all the ZFS forks up to date too.  ZFS would sometimes freeze (once a week) and need a reboot to start working again.
 - Use a database for storing statistics.
+- A container using all cores can start in ten seconds.  Restricting containers to 2 cores makes then take nearly a minute, which is why I hacked-in pre-generation of containers.  I would get rid of pre-generation and allow containers to use all cores for twenty seconds of user-time.
 
 # things done right
 While this project is a mess, there are a couple of good areas:
